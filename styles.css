@@ -306,3 +306,139 @@ html {
         transform: none;
     }
 }
+
+/* 首页背景动画 */
+@keyframes blob {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* 网格背景 */
+.bg-grid-pattern {
+    background-image: 
+        linear-gradient(rgba(0, 123, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 123, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* 隐藏滚动条 */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* 奖项卡片动画 */
+.awards-card {
+    transition: all 0.3s ease;
+}
+
+.awards-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 产品轮播样式 */
+.carousel-slide {
+    transform: translateX(0);
+    transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+}
+
+.carousel-slide.slide-in-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.carousel-slide.slide-in-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.carousel-slide.slide-out-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.carousel-slide.slide-out-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+/* 轮播指示器 */
+.carousel-indicator.active {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.2);
+}
+
+/* 轮播按钮悬停效果 */
+#carousel-prev:hover,
+#carousel-next:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* 产品轮播文字动画 */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carousel-slide h2 {
+    animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+.carousel-slide p {
+    animation: slideInUp 0.8s ease-out 0.4s both;
+}
+
+.carousel-slide .flex {
+    animation: slideInUp 0.8s ease-out 0.6s both;
+}
+
+/* 响应式轮播 */
+@media (max-width: 768px) {
+    .carousel-slide h2 {
+        font-size: 2rem !important;
+    }
+    
+    .carousel-slide p {
+        font-size: 1rem !important;
+    }
+    
+    #carousel-prev,
+    #carousel-next {
+        width: 3rem;
+        height: 3rem;
+    }
+}
